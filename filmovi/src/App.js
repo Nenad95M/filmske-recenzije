@@ -21,6 +21,13 @@ const next=()=>{
   }
   podesiFilm(sada);
   }
+ const randomFilm=()=>{
+return  Math.floor(Math.random()*Filmovi.length);
+ }
+  const random=()=>{
+    let sada=randomFilm;
+    podesiFilm(sada);
+  }
 const {img, title, desc, year, rating}=Filmovi[trenutniFilm];
   return (
     <div className="App">
@@ -41,6 +48,7 @@ const {img, title, desc, year, rating}=Filmovi[trenutniFilm];
 <button className='btn btn-success btn-sm' onClick={prev}>Levo</button>
 <button className='btn btn-primary btn-sm' onClick={next}>Desno</button>
   </div>
+  <button className='btn' onClick={random}>Daj nasumičan film</button>
 </div>      
 </div>
 </div>
