@@ -1,0 +1,10 @@
+.film{
+  margin: auto;
+}
+.film img{
+  max-height: 300px;
+  max-width: 300px;
+  width: 100%;
+  margin: auto;
+
+}
