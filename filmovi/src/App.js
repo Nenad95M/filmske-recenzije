@@ -6,27 +6,33 @@ import { useState } from 'react';
 
 function App() {
   const [trenutniFilm, podesiFilm] = useState(0);
-
+  const validateNum=(n)=>{
+    if (n===trenutniFilm){
+      n=n+1;
+    }
+    if (n < 0) {
+    return Filmovi.length - 1;
+    }
+    if (n > Filmovi.length - 1) {
+    return 0;
+    }
+    return n;
+  }
   const prev = () => {
     let sada = trenutniFilm - 1;
-    if (sada < 0) {
-      sada = Filmovi.length - 1;
-    }
-    podesiFilm(sada);
+    podesiFilm(validateNum(sada));
   }
   const next = () => {
     let sada = trenutniFilm + 1;
-    if (sada > Filmovi.length - 1) {
-      sada = 0;
-    }
-    podesiFilm(sada);
+    podesiFilm(validateNum(sada));
   }
   const randomFilm = () => {
     return Math.floor(Math.random() * Filmovi.length);
   }
+
   const random = () => {
     podesiFilm(randomFilm);
-
+    console.log(trenutniFilm);
   }
   const { img, title, desc, year, rating } = Filmovi[trenutniFilm];
   return (

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body id="body">
     <div></div>
     <div></div>
@@ -13,21 +15,28 @@
     <div></div>
     <div></div>
     <div></div>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum hic eos iure dignissimos tenetur dolor nulla totam! Aliquam natus eligendi eius commodi excepturi voluptatum voluptatibus eum at, similique dolores, iste nisi, minus quas! Optio, blanditiis. Quas dolore delectus libero non quis ipsa repellat ullam harum? Cum non nam fugiat ipsam, repellendus itaque, rem magni, dolores odit similique placeat autem quae voluptate minima amet illo in consequatur magnam ab earum? Facere deleniti minus adipisci minima officia velit atque numquam repudiandae laudantium impedit suscipit voluptate totam nostrum, vel qui nulla porro illum natus modi dolores nemo quo error, exercitationem doloribus? Distinctio, vero?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum hic eos iure dignissimos tenetur dolor nulla
+        totam! Aliquam natus eligendi eius commodi excepturi voluptatum voluptatibus eum at, similique dolores, iste
+        nisi, minus quas! Optio, blanditiis. Quas dolore delectus libero non quis ipsa repellat ullam harum? Cum non nam
+        fugiat ipsam, repellendus itaque, rem magni, dolores odit similique placeat autem quae voluptate minima amet
+        illo in consequatur magnam ab earum? Facere deleniti minus adipisci minima officia velit atque numquam
+        repudiandae laudantium impedit suscipit voluptate totam nostrum, vel qui nulla porro illum natus modi dolores
+        nemo quo error, exercitationem doloribus? Distinctio, vero?</p>
     <script>
 
-const childlessDomElements=[];
+        const childlessDomElements = [];
 
-function findChildlessDomElements(node){
- if(node.childNodes.length===0) {
-     childlessDomElements.push(node);            
- }
-     for(let i=0; i< node.childNodes.length; i++){
-      findChildlessDomElements(node.childNodes[i]);
-     }
-     }
-findChildlessDomElements(document);
-console.log(childlessDomElements);
+        function findChildlessDomElements(node) {
+            if (node.childNodes.length === 0 && node.nodeName=='DIV') {
+                childlessDomElements.push(node);
+            }
+            for (let i = 0; i < node.childNodes.length; i++) {
+                findChildlessDomElements(node.childNodes[i]);
+            }
+        }
+        findChildlessDomElements(document);
+        console.log(childlessDomElements);
     </script>
 </body>
+
 </html>
