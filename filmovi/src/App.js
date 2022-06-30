@@ -31,7 +31,7 @@ function App() {
   }
 
   const random = () => {
-    podesiFilm(randomFilm);
+    podesiFilm(validateNum(randomFilm()));
     console.log(trenutniFilm);
   }
   const { img, title, desc, year, rating } = Filmovi[trenutniFilm];
