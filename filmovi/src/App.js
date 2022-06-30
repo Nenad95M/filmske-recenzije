@@ -6,15 +6,15 @@ import { useState } from 'react';
 
 function App() {
   const [trenutniFilm, podesiFilm] = useState(0);
-  const validateNum=(n)=>{
-    if (n===trenutniFilm){
-      n=n+1;
+  const validateNum = (n) => {
+    if (n === trenutniFilm) {
+      n = n + 1;
     }
     if (n < 0) {
-    return Filmovi.length - 1;
+      return Filmovi.length - 1;
     }
     if (n > Filmovi.length - 1) {
-    return 0;
+      return 0;
     }
     return n;
   }
